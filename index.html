@@ -11,6 +11,9 @@
 
 	<!-- jQuery -->
     <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    	
+	<!-- initMap function -->
+	<script async defer src="script.js"></script>
     
 	<!-- Google maps geometry, places, geocode -->
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1EtjOw3Mc7zoi0pcGqwuDmPJ4j5mIC5w&callback=initMap&libraries=geometry,places""></script>
@@ -18,9 +21,7 @@
 	<!--
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap&libraries=geometry,places"></script>
 	-->
-	
-	<!-- custom js -->
-	<script async defer src="script.js">
+
 
 </head>
 
@@ -28,8 +29,8 @@
 	<div>
 	
 	  <p>Results List:</p>
-	  <div id='results_list'>
-	  </div>
+	  <ul id='results-list'>
+	  </ul>
 	  
 	  <div id="geolocator">
 		<p>Find me somewhere </p>

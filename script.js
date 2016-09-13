@@ -1,24 +1,22 @@
-$(document).ready(function() {
+function initMap() {
 
-	function initMap() {
+	var NUMBER = 10;
+	var RADIUS = 20000;
+	var searchLocs = [];
+	var spherical = google.maps.geometry.spherical;
+	var myLoc = new google.maps.LatLng(51.5, -0.12);
+	var mapOptions = {
+		zoom: 9,
+		center: myLoc
+	} ;
 
-		var NUMBER = 10;
-		var RADIUS = 20000;
-		var searchLocs = [];
-		var spherical = google.maps.geometry.spherical;
-		var myLoc = new google.maps.LatLng(51.5, -0.12);
-		var mapOptions = {
-			zoom: 9,
-			center: myLoc
-		}
-
-		// get search centre locations
-		for (var i = 0; i < NUMBER; i++) {
-			searchLocs[i] = spherical.computeOffset(myLoc, RADIUS, i * 360 / NUMBER);
-			console.log(i, "th search loc computed");
-		}
+	// get search centre locations
+	for (var i = 0; i < NUMBER; i++) {
+		searchLocs[i] = spherical.computeOffset(myLoc, RADIUS, i * 360 / NUMBER);
+		console.log(i, "th search loc computed");
 	}
 	
+	/*
 	var geocoder = new google.maps.Geocoder();
 
 	function geocodeAddress(geocoder, resultsMap) {
@@ -38,11 +36,13 @@ $(document).ready(function() {
 		});
 	};
 
-	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
 	document.getElementById('submit').addEventListener('click', function() {
 		geocodeAddress(geocoder, map);
 	});
+	*/
+
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
 
 	infowindow = new google.maps.InfoWindow();
 
@@ -83,5 +83,4 @@ $(document).ready(function() {
 			infowindow.open(map, this);
 		});
 	}
-
-});
+}
